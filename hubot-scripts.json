@@ -1,9 +1,9 @@
 [
   "javascript-sandbox.coffee",
   "ackbar.coffee",
+  "clojure.coffee",
   "achewood.coffee",
   "gifbin.coffee",
-  "gifsanity.coffee",
   "goodbad.coffee",
   "haskell.coffee",
   "httpcat.coffee",
