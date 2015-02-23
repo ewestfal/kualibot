@@ -5,6 +5,8 @@
   "author": "HUBOT <jamison+hubot@kuali.co>",
   "description": "Kualibot is love, kualibot is life",
   "dependencies": {
+    "flip": "0.1.1",
+    "htmlparser": "1.7.7",
     "hubot": "2.11.1",
     "hubot-ambush": "0.0.3",
     "hubot-bikeshed": "1.1.0",
@@ -29,7 +31,10 @@
     "hubot-slack": "3.2.1",
     "hubot-soon": "1.0.0",
     "hubot-victory": "1.2.0",
-    "hubot-youtube": "0.1.2"
+    "hubot-youtube": "0.1.2",
+    "sandbox": "0.8.6",
+    "soupselect": "0.2.0",
+    "tumblrbot": "0.1.0"
   },
   "engines": {
     "node": "0.10.x"

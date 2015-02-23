@@ -1,13 +1,12 @@
 [
-  "flip",
-  "sandbox",
-  "ackbar",
-  "achewood",
-  "gifbin",
-  "gifsanity",
-  "goodbad",
-  "haskell",
-  "httpcat",
-  "ive",
-  "kittens"
+  "javascript-sandbox.coffee",
+  "ackbar.coffee",
+  "achewood.coffee",
+  "gifbin.coffee",
+  "gifsanity.coffee",
+  "goodbad.coffee",
+  "haskell.coffee",
+  "httpcat.coffee",
+  "ive.coffee",
+  "kittens.coffee"
 ]
