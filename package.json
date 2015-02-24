@@ -28,7 +28,7 @@
     "hubot-seen": "0.2.2",
     "hubot-sentimental": "1.0.3",
     "hubot-shipit": "0.1.2",
-    "hubot-slack": "3.2.1",
+    "hubot-slack": "slackhq/hubot-slack",
     "hubot-soon": "1.0.0",
     "hubot-victory": "1.2.0",
     "hubot-youtube": "0.1.2",
