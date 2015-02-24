@@ -15,7 +15,7 @@
 
 
 module.exports = (robot) ->
-  robot.respond /(haskell|hs)\s+(.*)/i, (msg)->
+  robot.respond /(haskell|hs)\s+(.*)/i, (msg) ->
     script = msg.match[2]
 
     msg.http("http://tryhaskell.org/eval")
@@ -28,8 +28,11 @@ module.exports = (robot) ->
               if result.error
                 msg.send result.error
               else
-                if result.success
-                  x = [result.success.stdout.join(''), result.success.value, result.success.type]
-                  msg.send x...
+                x = [result.success.value, result.success.type]
+                # slack adapter doesn't let you send empty text so we only
+                # prepend stdout if there is something there
+                if result.success.stdout?.length
+                  x.unshift result.success.stdout.join('')
+                msg.send x...
             catch e
               msg.send "Unable to evaluate script: #{script}. Request returned with the status code: #{res.statusCode} and error #{e}"
