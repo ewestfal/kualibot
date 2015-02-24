@@ -1,0 +1,1 @@
+rsync -avz -e ssh . root@104.236.216.159:~/kualibot/
