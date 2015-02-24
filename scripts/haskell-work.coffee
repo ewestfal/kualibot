@@ -8,32 +8,28 @@
 #   None
 #
 # Commands:
-#   hubot haskell <script> - Evaluate one line of Haskell
+#   hubot [haskell|hs] <script> - Evaluate one line of Haskell
 #
 # Author:
-#   edwardgeorge, slightly modified from code by jingweno
+#   jergason
 
-HASKELLJSON=""
 
 module.exports = (robot) ->
-  robot.respond /(haskell)\s+(.*)/i, (msg)->
+  robot.respond /(haskell|hs)\s+(.*)/i, (msg)->
     script = msg.match[2]
 
     msg.http("http://tryhaskell.org/eval")
       .query({exp: script})
-      .headers(Cookie: "HASKELLJSON=#{HASKELLJSON}")
       .get() (err, res, body) ->
         switch res.statusCode
           when 200
-            if res.headers["set-cookie"]
-              HASKELLJSON = res.headers["set-cookie"][0].match(/HASKELLJSON=([-a-z0-9]+);/)[1]
-            result = JSON.parse(body)
-
-            if result.error
-              msg.send result.error
-            else
-              if result.success
-                x = [result.success.stdout.join(''), result.success.value, result.success.type]
-                msg.send x...
-          else
-            msg.send "Unable to evaluate script: #{script}. Request returned with the status code: #{res.statusCode}"
+            try
+              result = JSON.parse(body)
+              if result.error
+                msg.send result.error
+              else
+                if result.success
+                  x = [result.success.stdout.join(''), result.success.value, result.success.type]
+                  msg.send x...
+            catch e
+              msg.send "Unable to evaluate script: #{script}. Request returned with the status code: #{res.statusCode} and error #{e}"
