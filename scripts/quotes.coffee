@@ -14,7 +14,7 @@
 #   solap
 
 module.exports = (robot) ->
-  robot.respond /(quote)?(.*)/i, (msg)->
+  robot.respond /(quote)/i, (msg)->
     msg.send(quote())
 
   quote = () ->
