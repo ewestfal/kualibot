@@ -18,7 +18,11 @@ Then run the deploy script:
 ```
 
 This pushes the changes up to the server. You probably still need to restart
-hubot, which is usually running in a tmux session named kualibot on that server.
+hubot, which is usually running behind pm2 on the server:
+
+```bash
+pm2 restart kualibot
+```
 
 ### Running kualibot Locally
 
