@@ -22,6 +22,7 @@
     "hubot-plusplus": "1.1.3",
     "hubot-principles": "1.0.0",
     "hubot-pugme": "0.1.0",
+    "hubot-pun-me": "0.0.2",
     "hubot-redis-brain": "0.0.2",
     "hubot-rules": "0.1.0",
     "hubot-scripts": "2.5.16",
